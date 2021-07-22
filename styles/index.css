@@ -1,0 +1,51 @@
+@tailwind base;
+
+/* Write your own custom base styles here */
+
+.noDrag {
+  touch-action: none;
+}
+.inset-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Write your own custom component styles here */
+
+@font-face {
+  font-family: "Bastia-Bold";
+  src: local("Bastia-Bold"),
+    url(../fonts/Bastia-Bold.woff) format("woff");
+  src: local("Bastia-Bold"),
+    url(../fonts/Bastia-Bold.woff2) format("woff2");
+}
+
+@font-face {
+    font-family: "Bastia-BoldOutline";
+    src: local("Bastia-BoldOutline"),
+      url(../fonts/Bastia-BoldOutline.woff) format("woff");
+    src: local("Bastia-BoldOutline"),
+      url(../fonts/Bastia-BoldOutline.woff2) format("woff2");
+  }
+  
+  @font-face {
+    font-family: "Halifax-Regular";
+    src: local("Halifax-Regular"),
+      url(../fonts/Halifax-Regular.woff) format("woff");
+    src: local("Halifax-Regular"),
+      url(../fonts/Halifax-Regular.woff2) format("woff2");
+  }
+
+
+
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
