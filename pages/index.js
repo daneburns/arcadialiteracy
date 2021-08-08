@@ -9,7 +9,9 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Hero />
+      <div className="max-w-screen-2xl mx-auto">
+        <Hero />
+      </div>
     </>
   );
 }

@@ -17,7 +17,7 @@ export default function NavItem({ title, url }) {
         <Link href={url}>
           <a
             href={url}
-            className="text-cloud-200 text-lg font-serif tracking-wider font-thin "
+            className="text-cloud-800 text-xl font-serif tracking-wider font-thin "
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
           >
@@ -26,7 +26,7 @@ export default function NavItem({ title, url }) {
         </Link>
       </div>
       <a.div
-        className="h-1 bg-cloud-200 overflow-hidden"
+        className="h-1 bg-brown-500 overflow-hidden"
         style={underlineStyle}
       ></a.div>
     </div>
