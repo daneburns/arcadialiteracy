@@ -1,8 +1,14 @@
-import 'tailwindcss/tailwind.css'
+import "tailwindcss/tailwind.css";
 import "../styles/index.css";
+import Nav from "../components/Nav/Nav";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <Nav />
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;
