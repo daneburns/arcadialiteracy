@@ -16,10 +16,10 @@ export default function Nav() {
         </div>
 
         <div className="center hidden md:flex flex flex-row mx-auto space-x-12">
-          <NavItem title="Meet The Team" url="/our-learning-center" />
-          <NavItem title="Contact Us" url="/our-learning-center" />
           <NavItem title="Programs" url="/programs" />
-          <NavItem title="Resources" url="/blog" />
+          <NavItem title="Meet The Team" url="/meettheteam" />
+          <NavItem title="Resources" url="/resources" />
+          <NavItem title="Contact Us" url="/our-learning-center" />
         </div>
       </div>
     </nav>
