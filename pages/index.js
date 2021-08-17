@@ -61,7 +61,9 @@ export default function Home() {
             >
               <div className="flex flex-col space-y-10 text-right">
                 <div>
-                  <h1 className="text-7xl font-serif">Tutors, not pooters.</h1>
+                  <h1 className="text-7xl font-serif">
+                    Tutors, not computers.
+                  </h1>
                 </div>
                 <p className="text-xl">
                   Using scientifically proven programs, research-based
