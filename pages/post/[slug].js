@@ -19,11 +19,12 @@ const postQuery = groq`
 `;
 
 export default function Post({ data, preview }) {
+
   const router = useRouter();
 
   const { data: post } = usePreviewSubscription(postQuery, {
     params: { slug: data.post?.slug },
-    initialData: data.post,
+    initialData: data?.post,
     enabled: preview && data.post?.slug,
   });
 
@@ -32,13 +33,12 @@ export default function Post({ data, preview }) {
   }
 
   const { title, mainImage, body } = post;
+  
 
   return (
     <article>
       <h2>{title}</h2>
-      <figure>
-        <img src={urlFor(mainImage).url()} />
-      </figure>
+      <figure>{/* <img src={urlFor(mainImage).url()} /> */}</figure>
       <PortableText blocks={body} />
     </article>
   );
@@ -64,6 +64,6 @@ export async function getStaticPaths() {
 
   return {
     paths: paths.map((slug) => ({ params: { slug } })),
-    fallback: true,
+    fallback: false,
   };
 }
