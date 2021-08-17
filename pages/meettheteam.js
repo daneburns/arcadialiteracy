@@ -3,38 +3,35 @@ import { useRouter } from "next/router";
 import { groq } from "next-sanity";
 import { usePreviewSubscription, urlFor, PortableText } from "../sanity.js";
 import { getClient } from "../sanity.server";
+import TeamMember from "../components/TeamMember/TeamMember";
 
 const authorQuery = groq`
-  *[_type == "tutor"][0] {
+  *[_type == "tutor"] {
     _id,
     name,
+    title
   }
 `;
 
-export default function Team({ data, preview }) {
-  const { data: author } = usePreviewSubscription(authorQuery, {
-    params: { slug: data.author?.slug },
-    initialData: data.author,
-    enabled: preview && data.author?.slug,
-  });
-
-  const { name } = author;
+export default function Team({ data }) {
+  
 
   return (
-    <article>
-      <h2>{name}</h2>
-    </article>
+    <div className="grid grid-cols-3">
+      {data.tutor.map((tutor) => (
+        <TeamMember name={tutor.name} />
+      ))}
+    </div>
   );
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const author = await getClient(preview).fetch(authorQuery);
-  console.log(author);
+  const tutor = await getClient(preview).fetch(authorQuery);
 
   return {
     props: {
       preview,
-      data: { author },
+      data: { tutor },
     },
   };
 }
